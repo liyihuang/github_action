@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 env:
-  PYTHON-VERSION: 3.9
+  PYTHON-VERSION: 3.9.12
 jobs:
   build:
     runs-on: ubuntu-latest
