@@ -9,6 +9,7 @@ on:
     branches: [ "main" ]
     paths:
       - 'src/*.py'
+  workflow_dispatch:
 
 env:
   PYTHON-VERSION: 3.9
