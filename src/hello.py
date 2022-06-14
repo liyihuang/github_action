@@ -6,6 +6,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''this is a hello world python function'''
-    return 'Web App with Python Flask!!'
+    return 'test CI'
 
 app.run(host='0.0.0.0', port=8080)
