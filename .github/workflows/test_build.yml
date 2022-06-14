@@ -1,4 +1,4 @@
-name: Pylint check
+name: test and build
 
 on:
   push:
