@@ -30,8 +30,11 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-  test:
+  build:
     runs-on: ubuntu-latest
+    needs: lint
     steps:
-    - name: test
-      run: exit 2
+    - name: hello world
+      run: echo 'hello'
+    - name: hello world again
+      run: echo 'again'
