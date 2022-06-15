@@ -28,5 +28,4 @@ jobs:
       with:
         manifests: |
           ./manifest
-        action: deploy
         force: true
