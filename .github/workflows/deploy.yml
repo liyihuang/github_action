@@ -5,9 +5,26 @@ on:
     workflows: [test and build]
     types: [completed]
   workflow_dispatch:
+
+env:
+  cluster-name: liyi-aks-test
+  resource-group: liyi-rg 
+
 jobs:
   on-success:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - run: echo 'The triggering workflow passed'
+    - uses: actions/checkout@v3
+    - uses: azure/aks-set-context@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        cluster-name: ${{ env.cluster-name }}
+        resource-group: ${{ env.resource-group }}
+      id: login
+    - uses: azure/setup-kubectl@v2.0
+      id: install
+    - uses: Azure/k8s-deploy@v3.1
+      with:
+        manifests: |
+          ./manifest

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: githubaction-deployment
+  labels:
+    app: githubaction
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: githubaction
+  template:
+    metadata:
+      labels:
+        app: githubaction
+    spec:
+      containers:
+      - name: githubaction
+        image: timhuanggithub/githubaction:latest
+        ports:
+        - containerPort: 8080
