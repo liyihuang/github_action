@@ -28,7 +28,5 @@ jobs:
       with:
         manifests: |
           ./manifest
-        strategy: canary
         action: deploy
-        percentage: 20
-        images: "timhuanggithub/githubaction:latest"
+        force: true
