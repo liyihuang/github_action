@@ -28,3 +28,6 @@ jobs:
       with:
         manifests: |
           ./manifest
+        strategy: canary
+        action: deploy
+        percentage: 20
