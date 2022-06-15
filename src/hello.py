@@ -6,6 +6,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''this is a hello world python function'''
-    return 'hello ci cd pipeline !'
+    return 'hello ci cd pipeline !!'
 
 app.run(host='0.0.0.0', port=8080)
