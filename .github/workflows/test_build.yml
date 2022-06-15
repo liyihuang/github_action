@@ -48,4 +48,4 @@ jobs:
       with:
         file: ./build/Dockerfile
         push: true
-        tags: ${{secrets.DOCKERHUB_USERNAME}}/githubaction:latest
+        tags: ${{secrets.DOCKERHUB_USERNAME}}/githubaction:${{github.sha}}

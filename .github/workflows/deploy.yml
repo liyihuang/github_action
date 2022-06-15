@@ -28,4 +28,5 @@ jobs:
       with:
         manifests: |
           ./manifest
-        force: true
+        images: "${{secrets.DOCKERHUB_USERNAME}}/githubaction:${{github.sha}}"
+        
